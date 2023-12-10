@@ -2,10 +2,19 @@
 //
 
 #include <iostream>
+#include <uv.h>
 
 int main()
 {
     std::cout << "Hello World!\n";
+
+    uv_loop_t loop;
+    uv_loop_init(&loop);
+    fprintf(stderr, "loop %s ", "hello world!!");
+    uv_run(&loop, UV_RUN_DEFAULT);
+    uv_loop_close(&loop);
+
+    return 0;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
